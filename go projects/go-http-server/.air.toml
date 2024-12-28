@@ -1,0 +1,9 @@
+
+[build]
+cmd = "go build -o './temp.main'
+bin = './temp/main'
+watch_dir = './'
+exclude_dir = ["temp", "vendor"]
+include_ext = ["go", "tpl", "tmpl", "html"]
+exclude_ext = ["tmp", "swp"]
+delay = 1000 

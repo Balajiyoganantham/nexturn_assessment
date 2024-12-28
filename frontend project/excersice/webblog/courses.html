@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Courses Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      padding-top: 56px; /* Adjust the padding to account for the fixed navbar */
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    footer a {
+      color: #f39c12; 
+      margin: 0 10px;
+    }
+    footer a:hover {
+      color: #f1c40f; /* Slightly different vibrant color on hover */
+    }
+    .card {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      background-color: #222; /* Dark background for cards */
+      color: #fff; /* White text inside cards */
+    }
+    .card:hover {
+      transform: scale(1.05); /* Zoom effect on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: adds shadow effect */
+    }
+    .card-img-top {
+      height: 180px; /* Fixed height for images */
+      object-fit: cover; /* Ensure the image covers the area without stretching */
+    }
+    .nav-link {
+      color: #f39c12; 
+    }
+    .navbar {
+      background-color: #000; /* Black background for navbar */
+    }
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #f39c12; /* Vibrant color for navbar text */
+    }
+    .navbar-brand:hover, .navbar-nav .nav-link:hover {
+      color: #f1c40f; /* Slightly different vibrant color on hover */
+    }
+    .container h1, .container h2, .container h3 {
+      color: #f39c12; /* Vibrant color for headings */
+    }
+    .btn-primary {
+      background-color: #f39c12; /* Vibrant color for buttons */
+      border-color: #f39c12; /* Border color for buttons */
+    }
+    .btn-primary:hover {
+      background-color: #f1c40f; /* Slightly different vibrant color on hover */
+      border-color: #f1c40f; /* Border color for buttons on hover */
+    }
+    .dropdown-menu {
+      background-color: #333; 
+    }
+    .dropdown-item {
+      color: #f39c12; 
+    }
+    .dropdown-item:hover {
+      background-color: #444; 
+      color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Mystical_heart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./blog.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Courses <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contact.html">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="bg-dark py-3">
+    <div class="container">
+      <h1 class="text-center">Our Courses</h1>
+    </div>
+  </header>
+
+  <!-- Courses Section -->
+  <div class="container my-5">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://d502jbuhuh9wk.cloudfront.net/courses/66505a0edae2dd1e36ae7510/66505a0edae2dd1e36ae7510_scaled_cover.jpg?v=1" class="card-img-top" alt="Course 1">
+          <div class="card-body">
+            <h5 class="card-title">Git Course</h5>
+            <p class="card-text">$400</p>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://d502jbuhuh9wk.cloudfront.net/courses/66406211785dd23adffc4412/66406211785dd23adffc4412_scaled_cover.jpg?v=2" class="card-img-top" alt="Course 2">
+          <div class="card-body">
+            <h5 class="card-title">GraphQL Course: Beginner to Expert</h5>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://d502jbuhuh9wk.cloudfront.net/resources/images/cc3.jpg" class="card-img-top" alt="Course 3">
+          <div class="card-body">
+            <h5 class="card-title">Sample Course</h5>
+            <p class="card-text">Get more information</p>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Course 4">
+          <div class="card-body">
+            <h5 class="card-title">Course Title 4</h5>
+            <p class="card-text">Short description of the course.</p>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Course 5">
+          <div class="card-body">
+            <h5 class="card-title">Course Title 5</h5>
+            <p class="card-text">Short description of the course.</p>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Course 6">
+          <div class="card-body">
+            <h5 class="card-title">Course Title 6</h5>
+            <p class="card-text">Short description of the course.</p>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Course 7">
+          <div class="card-body">
+            <h5 class="card-title">Course Title 7</h5>
+            <p class="card-text">Short description of the course.</p>
+            <a href="#" class="btn btn-primary">Get Course</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Mystical_heart</p>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+    <a href="https://github.com" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+  </footer>
+
+  <!-- Optional JavaScript; Bootstrap's JS requires jQuery and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

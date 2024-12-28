@@ -1,0 +1,246 @@
+
+A GO HTTP Server
+    - Helps in creating a web server.
+    - It is a struct that has a ServeHTTP method.
+    - It is a lightweight and fast way to create a web server.
+    - In GO, the net/http package is used to create a web server.
+    - This package provides functionality to create the server and handle the requests and responses..
+    - Majorly, this component includes
+        - A router to handle the incoming requests.
+        - A middleware to process the incoming requests.
+        - A handler to handle the incoming requests.
+    - We have 
+        - HTTP handlers - functions that process the incoming requests.
+        - Routes - URLs mapped to specific handlers.
+        - Server - listens for incoming requests and sends responses.
+
+/* *************************************** */
+
+If you dont want to restart go http server again and again,
+then you can use 'air' external package.
+
+1. Install the 'air' package:
+
+    $ go install github.com/air-verse/air@latest
+
+2. To check the version of 'air':
+
+    $ air -v
+
+3. Clean the cache if needed:
+
+    $ go clean -modcache
+
+4. Run the server using 'air':
+
+    $ air
+
+5. How air will know which file to run?
+    - It will look for the 'air.toml' file in the root directory.
+    - If it is not found, then it will look for the 'main.go' file.
+
+6. To create air configuration file:
+
+    $ air init
+
+    Note: This command will create an 'air.toml' file in the root directory which will 
+    have the configuration settings. You can anytime modify this file as per your requirements.
+
+/* *************************************** */
+
+1. Created a directory:
+
+    $ mkdir go-http-server
+    $ cd go-http-server
+
+2. Initialized a Go module:
+
+    $ go mod init go-http-server
+
+3. Created a main.go file:
+
+    package main
+
+    import (
+        "fmt"
+        "net/http"
+    )
+
+    // Route Handler
+    func homeHandler(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintln(w, "Welcome to the GO HTTP Server!!")
+    }
+
+    func main() {
+        // Map the "/" route to the homeHandler function
+        http.HandleFunc("/", homeHandler)
+
+        // Start the server on port 8080
+        fmt.Println("Server started on port 8080!")
+        if err := http.ListenAndServe(":8080", nil); err != nil {
+            fmt.Println("Error Starting Server!  ", err)
+        }
+
+    }
+
+4. Run the server:
+
+    $ go run main.go
+
+5. Open the browser and navigate to http://localhost:8080
+
+6. You should see the message "Welcome to the GO HTTP Server!!" displayed on the browser.
+
+7. To stop the server, press Ctrl+C in the terminal.
+
+/* *************************************** */
+
+Adding More Routing and Handlers
+
+1. Updated the main.go file:
+
+    package main
+
+    import (
+        "fmt"
+        "net/http"
+    )
+
+    // Home Route or Default Handler
+    func homeHandler(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintln(w, "Welcome to the GO HTTP Server!!")
+    }
+
+    // About Route Handler
+    func aboutHandler(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintln(w, "This is the about page.")
+    }
+
+    // Contact Route Handler
+    func contactHandler(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintln(w, "This is the contact page.")
+    }
+
+    func main() {
+        // Map the "/" route to the homeHandler function
+        // Request URL: http://localhost:8080/
+        http.HandleFunc("/", homeHandler)
+        // Request URL: http://localhost:8080/about
+        http.HandleFunc("/about", aboutHandler)
+        // Request URL: http://localhost:8080/contact
+        http.HandleFunc("/contact", contactHandler)
+
+        // Start the server on port 8080
+        fmt.Println("Server started on port 8080!")
+        if err := http.ListenAndServe(":8080", nil); err != nil {
+            fmt.Println("Error Starting Server!  ", err)
+        }
+
+    }
+
+2. Run the server:
+
+    $ go run main.go    
+
+3. Open the browser and navigate to http://localhost:8080, http://localhost:8080/about, and http://localhost:8080/contact
+
+/* *************************************** */
+
+Default air.toml file:
+
+root = "."
+testdata_dir = "testdata"
+tmp_dir = "tmp"
+
+[build]
+  args_bin = []
+  bin = "tmp\\main.exe"
+  cmd = "go build -o ./tmp/main.exe ."
+  delay = 1000
+  exclude_dir = ["assets", "tmp", "vendor", "testdata"]
+  exclude_file = []
+  exclude_regex = ["_test.go"]
+  exclude_unchanged = false
+  follow_symlink = false
+  full_bin = ""
+  include_dir = []
+  include_ext = ["go", "tpl", "tmpl", "html"]
+  include_file = []
+  kill_delay = "0s"
+  log = "build-errors.log"
+  poll = false
+  poll_interval = 0
+  post_cmd = []
+  pre_cmd = []
+  rerun = false
+  rerun_delay = 500
+  send_interrupt = false
+  stop_on_error = false
+
+[color]
+  app = ""
+  build = "yellow"
+  main = "magenta"
+  runner = "green"
+  watcher = "cyan"
+
+[log]
+  main_only = false
+  silent = false
+  time = false
+
+[misc]
+  clean_on_exit = false
+
+[proxy]
+  app_port = 0
+  enabled = false
+  proxy_port = 0
+
+[screen]
+  clear_on_rebuild = false
+  keep_scroll = true
+
+/* *************************************** */
+
+/* Case Study for Trainer */
+
+Employee Management System
+
+You will build a simple Employee Management System using GO as a RESTful API
+using GO HTTP servere. The system will handle the following features:
+
+- Manage a list of employees with CRUD operations.
+- Each employee will have the following attributes:
+    - ID (Unique Identifier)
+    - Name (Full Name)
+    - Position (Job Title)
+    - Salary (Monthly Salary)
+    - Department (Department Name)
+
+/* *************************************** */
+
+/* Case Study for Students */
+
+Product Manageent System
+
+You will build a simple Product Management System using GO as a RESTful API
+using GO HTTP servere. The system will handle the following features:
+
+- Manage a list of products with CRUD operations.
+- Each product will have the following attributes:
+    - ID (Unique Identifier)
+    - Name (Product Name)
+    - Description (Product Description)
+    - Price (Product Price)
+    - Category (Product Category)
+
+
+
+
+
+
+
+
+
+
